@@ -1,0 +1,711 @@
+@import "libs"
+@import "base"
+
+.container
+	position: relative
+
+.header
+	padding: 15px 0
+	background-color: rgba(#e82a2c, .61)
+	color: #fff
+
+	&--menu
+		position: fixed
+		top: 0
+		right: 0
+		left: 0
+		background-color: rgba(#e82a2c, .9)
+		z-index: 1000
+
+	&--active
+		position: fixed
+		top: 0
+		right: 0
+		left: 0
+		background-color: rgba(#e82a2c, .9)
+
+	&__logo
+		display: flex
+		align-items: center
+		line-height: 1.2
+
+	img
+		margin-right: 20px
+		margin-left: 30px
+
+	span
+		text-transform: uppercase
+	
+	a
+		color: #fff
+
+	&__container
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+	&__place
+		position: relative
+		padding-left: 45px
+		text-align: right
+
+		img
+			position: absolute
+			left: -15px
+			top: 50%
+			transform: translate(0, -50%)
+
+
+.nav-bar
+	position: fixed
+	top: 79px
+	right: 0
+	left: 0
+	background-color: #e4e4e4
+	padding: 13px 0
+	transition: all .3s
+	z-index: 1001
+	color: #fff
+
+	&--active
+		top: 0
+		padding: 5px 0
+		transition: all .3s
+
+	&--menu
+		top: 0
+		padding: 5px 0
+		transition: all .3s
+
+	&--top
+		top: 0
+		transition: all .3s
+
+
+	&__container
+		position: relative
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		align-items: center
+
+
+.nav
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+	ul
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		margin-left: 70px
+
+	li
+		margin-right: 90px
+
+		a
+			position: relative
+			z-index: 1
+			padding: 0 12px
+			color: $text
+			line-height: 1
+
+			&::before
+				content: ''
+				width: 0
+				transform: scale(0)
+				transition: all .3s
+				position: absolute
+				bottom: -25px
+				left: 0
+				right: 0
+				width: 100%
+				height: 4px
+				background-color: $accent
+				z-index: -1
+
+			&:hover
+				color: $accent
+				text-decoration: none
+				&::before
+					transform: scale(1)
+
+			&:focus
+				color: $accent
+				text-decoration: none
+				&::before
+					transform: scale(1)
+
+
+.main
+
+
+.hero
+	background-image: url(../img/hero-bg.jpg)
+	background-position: center
+	background-repeat: no-repeat
+	background-size: cover
+	padding-top: 285px
+	padding-bottom: 230px
+
+	p
+		text-transform: uppercase
+		font-size: 36px
+
+
+h1
+	position: relative
+	font-size: 60px
+	line-height: 1.2
+	text-transform: uppercase
+	margin-bottom: 40px
+
+	&::before
+		content: ''
+		position: absolute
+		bottom: -10px
+		left: 0
+		width: 70px
+		height: 3px
+		background: $accent
+
+
+h2
+	font-size: 48px
+	text-align: center
+	margin-bottom: 60px
+
+
+h3
+	font-size: 24px
+	margin-bottom: 30px
+	
+
+.trust
+	padding-bottom: 135px
+	padding-top: 90px
+
+	&__list
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+
+	&__item
+		position: relative
+		min-width: 285px
+		width: 28%
+		margin-bottom: 65px
+		padding-left: 85px
+
+		&::before
+			content: ''
+			width: 55px
+			height: 55px
+			background: #ebeced
+			position: absolute
+			left: 0
+			top: 0
+			border-radius: 50%
+
+		img
+			position: absolute
+			top: 10px
+			left: 0
+
+
+	p
+		font-size: 13px
+
+
+.about
+	padding: 80px 0
+	background-image: url(../img/about-bg.png)
+	background-position: center
+	background-size: cover
+	background-repeat: no-repeat
+	overflow: inherit
+
+	&__content
+		line-height: 1.2
+		margin-bottom: 90px
+
+	&__name
+		text-align: right
+		color: #fff
+		line-height: 1.1
+
+		b
+			text-transform: uppercase
+
+	img
+		position: absolute
+		top: -150px
+		right: -120px
+
+
+.price
+	padding-top: 130px
+	padding-bottom: 70px
+
+	h2
+		margin-bottom: 90px
+
+	img
+		display: block
+		margin: 0 auto 15px auto
+
+	h3
+		font-weight: 700
+		text-align: center
+		font-size: 18px
+		color: $accent
+
+	&__list
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+
+	&__item
+		position: relative
+		width: 270px
+		height: 270px
+		border: 1px solid $accent
+		margin-bottom: 80px
+		margin-right: 80px
+		padding-top: 90px
+		z-index: 1
+		cursor: pointer
+
+		&::before
+			content: ''
+			width: 55px
+			height: 55px
+			background: #ebeced
+			position: absolute
+			left: 45%
+			top: 80px
+			border-radius: 50%
+			z-index: -1
+
+		&:hover
+			.price__item_hover
+				opacity: 1
+				transform: scale(1)
+
+		&_hover
+			position: absolute
+			left: -1px
+			right: -1px
+			bottom: -1px
+			top: -1px
+			background: #f0797a
+			color: #fff
+			padding: 20px
+			line-height: 1.3
+			z-index: 1
+			border: 1px solid #f0797a
+			opacity: 0
+			transform: scale(0)
+			transition: all .3s
+
+			span
+				position: absolute
+				right: 20px
+				bottom: 12px
+				display: block
+				width: 7px
+				height: 7px
+				border-top: 1px solid #fff
+				border-left: 1px solid #fff
+				transform: rotate(135deg)
+				z-index: 1
+
+		&_more
+			position: absolute
+			right: 7px
+			bottom: 7px
+			font-size: 12px
+			color: $accent
+
+			span
+				position: absolute
+				left: -15px
+				top: 7px
+				display: block
+				width: 7px
+				height: 7px
+				border-top: 1px solid $accent
+				border-left: 1px solid $accent
+				transform: rotate(-45deg)
+
+
+.work
+	padding-bottom: 55px
+
+	h2
+		text-align: left
+		margin-bottom: 15px
+
+	h3
+		font-size: 18px
+		font-weight: 700
+		margin-bottom: 20px
+
+	img
+		margin-bottom: 20px
+
+	&__sub-title
+		margin-bottom: 60px
+
+	&__red
+		color: $accent
+		margin-bottom: 30px
+
+	&__list
+		display: flex
+		justify-content: space-between
+
+	&__item
+		width: 20%
+
+		&_top
+			position: relative
+			z-index: 1
+
+			&::before
+				content: ''
+				width: 55px
+				height: 55px
+				background: #ebeced
+				position: absolute
+				left: 10px
+				top: 0
+				border-radius: 50%
+				z-index: -1
+
+			span
+				position: absolute
+				left: 40px
+				top: 0
+				line-height: 1
+				font-size: 24px
+				color: #c2c2c2
+
+			div
+				position: absolute
+				right: 20px
+				top: 50%
+				transform: translate(-50%, 0)
+				width: 55px
+				border: .5px dashed $accent
+
+			b
+				display: block
+				width: 7px
+				height: 7px
+				border-top: 1px solid $accent
+				border-right: 1px solid $accent
+				transform: rotate(45deg)
+				position: absolute
+				right: -5px
+				top: -3px
+
+
+.question
+	padding-top: 55px
+	padding-bottom: 90px
+	background-image: url(../img/question-bg.jpg)
+	background-position: center
+	background-size: cover
+	background-repeat: no-repeat
+
+
+	h2
+		text-align: left
+		margin-bottom: 10px
+
+	p
+		margin-bottom: 30px
+
+	.form
+		display: flex
+		justify-content: space-between
+
+		&__colmns
+			width: 48%
+
+		input, textarea
+			width: 100%
+
+		.btn
+			width: 100%
+			font-weight: 700
+
+
+.info
+	padding-top: 130px
+	padding-bottom: 100px
+
+	&__content
+		padding-left: 150px
+
+	img
+		position: absolute
+		left: 40px
+		top: 50%
+		transform: translate(0, -50%)
+
+
+	a
+		color: $accent
+
+		&:hover, &:focus
+			text-decoration: underline
+
+
+.customer
+	padding-top: 50px
+	padding-bottom: 110px
+	background-image: url(../img/customer-bg.jpg)
+	background-position: center
+	background-repeat: no-repeat
+	background-size: cover
+	
+	h2
+		text-align: left
+		margin-bottom: 45px
+
+	&__item
+		&_title
+			cursor: pointer
+			display: flex
+			margin-bottom: 35px
+			position: relative
+
+			&::before
+				content: ''
+				position: absolute
+				right: 0
+				top: 0
+				width: 10px
+				height: 10px
+				border-top: 1px solid #000
+				border-left: 1px solid #000
+				transform: rotate(-135deg)
+				transition: all .3s
+
+			&--active
+				&::before
+					transform: rotate(45deg)
+
+			
+
+			span
+				display: block
+				color: #fff
+				text-align: center
+				width: 25px
+				height: 25px
+				background: $accent
+				border-radius: 50%
+				margin-right: 15px
+				line-height: 25px
+			
+			b
+				border-bottom: 1px dashed #a6a297
+				display: block
+				width: 100%
+
+		&_content
+			background: #e1e1e1
+			padding: 30px
+			margin-bottom: 35px
+
+
+.reviews
+	padding-top: 50px
+	padding-bottom: 110px
+
+	h2
+		margin-bottom: 55px
+
+	.btn
+		padding: 0 80px
+
+	.swiper-container
+		width: 70%
+		padding: 15px
+		box-shadow: 0 0 5px 0 rgba(0, 0, 0, .3)
+
+	.swiper-slide-top
+		border-bottom: 1px solid #f3f3f3
+		display: flex
+		justify-content: space-between
+		padding: 15px 60px
+	
+	.swiper-slide-content
+		padding: 30px 60px
+		
+	.swiper-button-prev, 
+	.swiper-button-next
+		background-image: url(../img/arrow.png)
+		background-size: 45px 45px
+		width: 45px
+		height: 45px
+		top: 57%
+
+	.swiper-button-next
+		transform: rotate(-180deg)
+
+
+#map
+	height: 470px
+
+.map
+	position: relative
+
+	.container
+		position: absolute
+		right: 0
+		left: 0
+		top: 30%
+		z-index: 1
+
+	.btn
+		padding: 0 60px
+		font-weight: 700
+
+	&__block
+		position: absolute
+		padding: 30px 30px 40px 40px
+		background: #fff
+		right: 0
+
+	h2
+		font-size: 28px
+		margin-bottom: 25px
+
+	&__line
+		display: flex
+		justify-content: space-between
+
+		div
+			display: flex
+
+			&:first-child
+				margin-right: 80px
+
+		a
+			font-weight: 700
+			color: $text
+
+		span
+			margin-right: 30px
+			&:last-child
+				margin-right: 0
+
+
+.footer
+	background: #313131
+	padding: 30px 0
+
+	&__container
+		display: flex
+		justify-content: space-between
+		color: #fff
+
+	&__logo
+		text-transform: uppercase
+		line-height: 1.1
+		font-size: 18px
+		font-weight: 700
+
+		span
+			text-transform: none
+			font-size: 14px
+			font-weight: 400
+
+		b
+			font-size: 12px
+			color: #4c4c4c
+			text-transform: none
+	
+	&__nav
+		display: flex
+		flex-direction: column
+
+		.nav
+			li
+				margin-right: 35px
+
+			ul
+				margin-left: 0
+
+			a
+				color: #fff
+				padding: 0
+
+				&::before
+					bottom: -5px
+					height: 2px
+
+				&:hover, &:focus
+					color: #fff
+
+
+	&__contacts
+		display: flex
+		flex-direction: column
+
+		&_tel
+			font-size: 14px
+			color: #fff
+			&:hover, &:focus
+				color: $accent
+
+
+		&_call
+			font-size: 12px
+			font-weight: 700
+			text-align: right
+			color: #fff
+			position: relative
+			z-index: 1
+			line-height: 1.4
+			font-size: 12px
+
+			&::before
+				content: ''
+				width: 0
+				transform: scale(0)
+				transition: all .3s
+				position: absolute
+				bottom: 0px
+				left: 0
+				right: 0
+				width: 100%
+				height: 2px
+				background-color: $accent
+				z-index: -1
+
+			&:hover
+				color: $accent
+				text-decoration: none
+				&::before
+					transform: scale(1)
+
+			&:focus
+				color: $accent
+				text-decoration: none
+				&::before
+					transform: scale(1)
+	&__title
+		font-weight: 700
+		color: #6c6c6c
+		font-size: 18px
+		margin-bottom: 20px
+
+
+@import "page"
+@import "media" // Always at the end

@@ -1,0 +1,14 @@
+/node_modules/
+/dist/
+/libs/
+/psd/
+/.git/
+/js/common.js/
+/app/css/
+/.bowerrc/
+/gulpfile.js/
+/.gitignore/
+/_backstage
+/package-lock.json
+/Thumbs.db
+/**/*.DS_Store
