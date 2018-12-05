@@ -3,6 +3,9 @@ $(function() {
 new WOW().init();
 
 //----------------------акардион-------------------------------------------------
+  $(".customer__item_content").slideUp("slow");
+  $(".active").slideDown("slow");
+
   $(".customer__item_title").on("click", function(){
     if ($(this).parent().hasClass('active')) {
       $(this).parent().removeClass('active');
